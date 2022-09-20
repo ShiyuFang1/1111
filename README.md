@@ -23,7 +23,7 @@ npm run serve
 
 ## 前端路由
 
-![image-20220608150232527](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116055.png)
+![image-20220608150232527](https://raw.githubusercontent.com/ShiyuFang1/Shangpinhui-shopping-website/main/src/components/images/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220920114306.png)
 
 ## API接口
 
