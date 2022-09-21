@@ -216,13 +216,13 @@ export const reqFloors = ()=> mockAjax.get('/floors')
 
 ## Search Route
 
-1. Prepare search and query condition parameters
-2. Display dynamic data of component
-3. Search by category and keyword
-4. Search by brands
-5. Search by attributes
-6. Sort Search
-7. Custom paging components
+1. Prepare search and query condition parameters  
+2. Display dynamic data of component  
+3. Search by category and keyword  
+4. Search by brands  
+5. Search by attributes  
+6. Sort Search  
+7. Custom paging components  
 
 ![image-20220608155022983](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116062.png)
 
@@ -230,14 +230,14 @@ export const reqFloors = ()=> mockAjax.get('/floors')
 
 ## Detail Route
 
-1)Partially enlarging picture
-2)Carousel figure
+1)Partially enlarging picture  
+2)Carousel figure  
 
 ![image-20220608155212247](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116064.png)
 
 ## AddCartSuccess Route
 
-Distinguish sessionStorage与localStorage
+Distinguish sessionStorage from localStorage
 
 ![image-20220608155413517](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116065.png)
 
