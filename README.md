@@ -251,8 +251,8 @@ Distinguish sessionStorage与localStorage
 ![image-20220608155635581](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116066.png)
 
 ## Registration and login router
-1) Response processing of components after registration/login request. 
-2) Automatically carry token data after logging in.
+1) Response processing of components after registration/login request.   
+2) Automatically carry token data after logging in.  
 
 ![image-20220608155847993](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116067.png)
 
@@ -260,23 +260,23 @@ Distinguish sessionStorage与localStorage
 
 Test account and password:
 
-Account: 13700000000
-Password: 111111
+Account: 13700000000  
+Password: 111111  
 
 ## Navigation and Route Guards
 
-a. Only after logging in, you can view the transaction/payment/personal center page.
-b. You can view the login page only if you are not logged in.
-c. Only when there is skuInfo data in the carried skuNum and sessionStorage,  you can view the page of adding to the shopping cart successfully.
-d. You can only jump to the transaction page from the shopping cart page.
-e.You can only jump to the payment page from the transaction  page.
-f. Only from the payment page,  you can jumps to the successful payment page.
+a. Only after logging in, you can view the transaction/payment/personal center page.  
+b. You can view the login page only if you are not logged in.  
+c. Only when there is skuInfo data in the carried skuNum and sessionStorage,  you can view the page of adding to the shopping cart successfully.  
+d. You can only jump to the transaction page from the shopping cart page.  
+e.You can only jump to the payment page from the transaction  page.  
+f. Only from the payment page,  you can jumps to the successful payment page.  
 
 ## Order and Payment
 
-1) Submit the order
-2) Pay with QR code
-3) Get order status
+1) Submit the order  
+2) Pay with QR code  
+3) Get order status  
 
 ![image-20220609105837105](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116069.png)
 
@@ -305,7 +305,7 @@ Moreover, the requested target image will only be loaded  when the <img> enters 
 
 ## Router Lazy Loading
 
-(1) When packaging and building applications, the JS package could become very large, which will affect page loading. If we can split the components corresponding to different routers into different code blocks, and then load the corresponding components when the routers are accessed, it will be more efficient.
+(1) When packaging and building applications, the JS package could become very large, which will affect page loading. If we can split the components corresponding to different routers into different code blocks, and then load the corresponding components when the routers are accessed, it will be more efficient.  
 (2) Essentially, Vue's asynchronous components are applied to routing components. which need to use the dynamic import syntax.
 
 ## Form Data Validation
