@@ -1,39 +1,27 @@
 # shangpinhuishop
 ## Build Setup
 
-```bash
-# 克隆项目
-git clone https://github.com/wearetheone777/shangpinhuishop.git
-
-# 进入项目目录
-cd shangpinhuishop
-
-# 安装依赖
-npm install
-
-# 建议不要直接使用 cnpm 安装以来，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
-npm install --registry=https://registry.npm.taobao.org
-
-# 启动服务
-npm run serve
 ```
-## 技术选型
+
+# cd shangpinhuishop
+
+# npm install
+
+# npm run serve
+```
+## Technological Selection
 
 ![image-20220608150139753](https://raw.githubusercontent.com/ShiyuFang1/Shangpinhui-shopping-website/main/src/components/images/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220920105818.png)
 
-## 前端路由
+## Router
 
 ![image-20220608150232527](https://raw.githubusercontent.com/ShiyuFang1/Shangpinhui-shopping-website/main/src/components/images/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220920114306.png)
 
-## API接口
-
-![image-20220608150314003](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116056.png)
-
-## 目录介绍
+## Menu Introduction
 
 ![image-20220608150502494](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116057.png)
 
-## header组件
+## Header Component
 
 ![image-20220608151719241](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116058.png)
 
@@ -69,7 +57,7 @@ VueRouter.prototype.replace = function (location, onComplete, onAbort) {
 
 
 
-## Footer组件
+## Footer Component
 
 ![image-20220608152337887](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116059.png)
 
@@ -94,7 +82,7 @@ VueRouter.prototype.replace = function (location, onComplete, onAbort) {
 //在组件上面添加<Footer v-show="!$route.meta.isHideFooter"/>
 ```
 
-## Home组件
+## Home Component
 
 ![image-20220608152939577](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116060.png)
 
@@ -219,77 +207,76 @@ api/index.js
 ```js
 import mockAjax from './mockAjax'
 
-// 获取广告轮播列表
+// Get the advertisement carousel list
 export const reqBanners = ()=> mockAjax.get('/banners')
 
-// 获取首页楼层列表
+// Get floor list of home page
 export const reqFloors = ()=> mockAjax.get('/floors')
 ```
 
-## Search路由
+## Search Route
 
-1.搜索查询条件参数理解与准备
-2.组件动态数据显示
-3.根据分类和关键字进行搜索
-4.根据品牌进行搜索
-5.根据属性进行搜索
-6.排序搜索
-7.自定义分页组件
+1. Prepare search and query condition parameters
+2. Display dynamic data of component
+3. Search by category and keyword
+4. Search by brands
+5. Search by attributes
+6. Sort Search
+7. Custom paging components
 
 ![image-20220608155022983](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116062.png)
 
 ![image-20220608155044667](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116063.png)
 
-## Detail路由
+## Detail Route
 
-1)图片放大镜效果
-2)小图轮播
+1)Partially enlarging picture
+2)Carousel figure
 
 ![image-20220608155212247](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116064.png)
 
-## AddCartSuccess路由
+## AddCartSuccess Route
 
-区别使用sessionStorage与localStorage
+Distinguish sessionStorage与localStorage
 
 ![image-20220608155413517](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116065.png)
 
-## ShopCart路由
+## ShopCart Route
 
-1)用户临时ID的处理
-2)购物车数据的管理(复杂)
-3)不使用v-model监控用户输入
-4)async / await / Promise.all() 的使用
+1) Processing of user temporary ID
+2) Management of shopping cart data
+3) Monitor user input without using v-model
+4)Application of async / await / Promise.all() 
 
 ![image-20220608155635581](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116066.png)
 
-## 注册与登陆路由
-
-1)注册/登陆请求后组件的响应处理
-2)登陆后自动携带token数据
+## Registration and login router
+1) Response processing of components after registration/login request. 
+2) Automatically carry token data after logging in.
 
 ![image-20220608155847993](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116067.png)
 
 ![image-20220608155904866](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116068.png)
 
-测试用的账号和密码:
+Test account and password:
 
-账号:13700000000
-密码:111111
+Account: 13700000000
+Password: 111111
 
-## 导航和路由守卫
+## Navigation and Route Guards
 
-a.只有登陆了, 才能查看交易/支付/个人中心界面
-b.只有没有登陆, 才能查看登陆界面
-c.只有携带的skuNum以及sessionStorage中有skuInfo数据, 才能查看添加购物车成功的界面
-d.只能从购物车界面, 才能跳转到交易界面
-e.只能从交易界面, 才能跳转到支付界面
-f.只有从支付界面, 才能跳转到支付成功的界面
+a. Only after logging in, you can view the transaction/payment/personal center page.
+b. You can view the login page only if you are not logged in.
+c. Only when there is skuInfo data in the carried skuNum and sessionStorage,  you can view the page of adding to the shopping cart successfully.
+d. You can only jump to the transaction page from the shopping cart page.
+e.You can only jump to the payment page from the transaction  page.
+f. Only from the payment page,  you can jumps to the successful payment page.
 
-## 订单与支付
+## Order and Payment
 
-1)提交订单
-2)支付二维码
-3)获取订单状态
+1) Submit the order
+2) Pay with QR code
+3) Get order status
 
 ![image-20220609105837105](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116069.png)
 
@@ -297,36 +284,35 @@ f.只有从支付界面, 才能跳转到支付成功的界面
 
 ![image-20220609110004433](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116071.png)
 
-## 支付组件
+## Payment Component
 
 ![image-20220609110322172](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116072.png)
 
 ![image-20220609110333949](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116073.png)
 
-## 支付成功组件
+## Successful Payment Component
 
 ![image-20220609110358429](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116074.png)
 
-## 我的订单组件
+## Order Component
 
 ![image-20220609110438770](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116075.png)
 
-## 图片懒加载
+## Image Lazy Loading
 
-还没有加载得到目标图片时, 先显示loading图片
-在<img>进入可视范围才加载请求目标图片
+When the target image didn't finish loading, the page will display the loading image during the process.
+Moreover, the requested target image will only be loaded  when the <img> enters the visible range.
 
-## 路由懒加载
+## Router Lazy Loading
 
-(1)当打包构建应用时，JS包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，这样就更加高效了
-(2)本质就是Vue 的异步组件在路由组件上的应用
-需要使用动态import语法, 也就是import()函数
+(1) When packaging and building applications, the JS package could become very large, which will affect page loading. If we can split the components corresponding to different routers into different code blocks, and then load the corresponding components when the routers are accessed, it will be more efficient.
+(2) Essentially, Vue's asynchronous components are applied to routing components. which need to use the dynamic import syntax.
 
-## 前台表单校验
+## Form Data Validation
 
-(1)项目中有一些如注册/登陆表单, 在提交请求前是需要进行表单输入数据校验的
-(2)只有前台表单验证成功才会发请求
-(3)如果校验失败, 以界面红色文本的形式提示, 而不是用alert的形式
-(4)校验的时机, 除了点击提交时, 还有输入过程中实时进行校验
+(1) There are some register/login forms in the project, which need to be validated before submitting the request.
+(2) The request will be sent only after the forestage form is verified successfully.
+(3) If the validation fails, it will be prompted in the form of red text on the interface instead of alert.
+(4) The timing of validation is not only when clicking Submit, but also during the input process.
 
 ![image-20220609110707175](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116077.png)
