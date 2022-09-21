@@ -310,9 +310,9 @@ Moreover, the requested target image will only be loaded  when the <img> enters 
 
 ## Form Data Validation
 
-(1) There are some register/login forms in the project, which need to be validated before submitting the request.
-(2) The request will be sent only after the forestage form is verified successfully.
-(3) If the validation fails, it will be prompted in the form of red text on the interface instead of alert.
-(4) The timing of validation is not only when clicking Submit, but also during the input process.
+(1) There are some register/login forms in the project, which need to be validated before submitting the request.  
+(2) The request will be sent only after the forestage form is verified successfully.  
+(3) If the validation fails, it will be prompted in the form of red text on the interface instead of alert.  
+(4) The timing of validation is not only when clicking Submit, but also during the input process.  
 
 ![image-20220609110707175](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116077.png)
