@@ -152,10 +152,10 @@ devServer: {
 },
 ```
 
-## 使用vuex管理状态
+## Vuex
 
-由于项目体积比较大，向服务器发请求的接口过多，服务器返回的数据也会很多，如果还用以前的方式存储数据，导致vuex中的state数据格式比较复杂。采用vuex模块式管理数据。
-Vuex核心概念:state、actions、mutations、getters、modules
+The situation of data interaction is quite complicated based on the project size. Thus, we choose vuex module to manage data.  
+Vuex features:state、actions、mutations、getters、modules
 
 ## Mock/模拟数据接口
 
@@ -180,13 +180,13 @@ api/ajaxMock.js
 
 ```js
 /* 
-专门请求mock接口的axios封装
+
 */
 import axios from 'axios'
 
 const mockAjax = axios.create({
-  baseURL: "/mock", // 路径前缀
-  timeout: 10000 // 请求超时时间
+  baseURL: "/mock", 
+  timeout: 10000 
 })
 
 mockAjax.interceptors.request.use((config) => {
