@@ -61,13 +61,13 @@ VueRouter.prototype.replace = function (location, onComplete, onAbort) {
 
 ![image-20220608152337887](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116059.png)
 
-利用路由元信息meta配置和v-show控制footer组件的显示和隐藏在
+
 
 ```js
 {
   path: '/register',
   component: Register,
-  meta: { // 需要隐藏footer的路由添加此配置
+  meta: { // Add this configuration to the route that needs to hide the footer    
     isHideFooter: true
   }
 },
@@ -79,7 +79,7 @@ VueRouter.prototype.replace = function (location, onComplete, onAbort) {
     isHideFooter: true
   }
 },
-//在组件上面添加<Footer v-show="!$route.meta.isHideFooter"/>
+//Add <Footer v-show="!$route.meta.isHideFooter"/> to the component
 ```
 
 ## Home Component
