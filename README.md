@@ -25,24 +25,24 @@
 
 ![image-20220608151719241](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116058.png)
 
-使用声明式路由导航与编程式路由导航
+Using Declarative Route Navigation vs Programmatic Route Navigation  
 
-解决编程式路由导航的一个错误
+Fix a bug in programmatic route navigation  
 
-编程式路由跳转到当前路由(参数不变), 会抛出NavigationDuplicated的警告错误,如何解决?
+The programmatic route jumps to the current route (parameters remain unchanged), and a warning error of Navigation Duplicated will be thrown. How to solve it?  
 
-通过修正Vue原型上的push和replace方法
+Fix the push and replace methods on the Vue prototype  
 
 ```js
-// 缓存原型上的push函数
+// Cache the push function on the prototype  
 const originPush = VueRouter.prototype.push
 const originReplace = VueRouter.prototype.replace
-// 给原型对象上的push指定新函数函数
+// Assign new function to push on prototype object  
 VueRouter.prototype.push = function (location, onComplete, onAbort) {
-  // 判断如果没有指定回调函数, 通过call调用源函数并使用catch来处理错误
+  // Determine if no callback function is specified, call the original function and use catch to handle the error  
   if (onComplete===undefined && onAbort===undefined) {
     return originPush.call(this, location, onComplete, onAbort).catch(() => {})
-  } else { // 如果有指定任意回调函数, 通过call调用源push函数处理
+  } else { // If any callback function is specified, call the original push function through call for processing  
     originPush.call(this, location, onComplete, onAbort)
   }
 }
@@ -86,67 +86,67 @@ VueRouter.prototype.replace = function (location, onComplete, onAbort) {
 
 ![image-20220608152939577](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116060.png)
 
-子组件
+Subcomponent   
 
 ![image-20220608153006927](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116061.png)
 
-## 封装ajax请求模块
+## Encapsulate the ajax request module
 
 ```js
 /* 
-对axios进行二次包装
-1. 配置通用的基础路径和超时
-2. 显示请求进度条
-3. 成功返回的数据不再是response, 而直接是响应体数据response.data
-4. 统一处理请求错误, 具体请求也可以选择处理或不处理
+Secondary packaging of axios
+1. Configure a common base path and timeout  
+2. Display the request progress bar  
+3. The data which returned successfully isthe response body data（response.data）   
+4. Unified dispose all request errors, for the specific requests  which can also be processed or not processed  
 */
 import axios from 'axios'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-// 配置不显示右上角的旋转进度条, 只显示水平进度条
+//Configure hide the rotation progress bar in the upper right corner, but only the request progress bar   
 NProgress.configure({ showSpinner: false }) 
 
 const service = axios.create({
-  baseURL: "/api", // 基础路径
-  timeout: 15000   // 连接请求超时时间
+  baseURL: "/api", // basic path
+  timeout: 15000   //  Timeout of the connection request  
 })
 
 service.interceptors.request.use((config) => {
-  // 显示请求中的水平进度条
+  // display the request progress bar 
   NProgress.start()
 
-  // 必须返回配置对象
+  // return config
   return config
 })
 
 service.interceptors.response.use((response) => {
-  // 隐藏进度条
+  // Hide  progress bar  
   NProgress.done()
-  // 返回响应体数据
+  // return response body data
   return response.data
 }, (error) => {
-  // 隐藏进度条
+  //Hide  progress bar  
   NProgress.done()
 
-  // 统一处理一下错误
-  alert( `请求出错: ${error.message||'未知错误'}`)
+  //  Unified dispose all request errors
+  alert( `request errors: ${error.message||'unknown error'}`)
 
-  // 后面可以选择不处理或处理
+  // for the specific requests  which can also be processed or not processed later
   return Promise.reject(error)
 })
 
 export default service
 ```
 
-## 配置代理服务器
+## Configure proxy services
 
 ```js
 devServer: {
   proxy: {
-    '/api': { // 只对请求路由以/api开头的请求进行代理转发
-      target: 'http://182.92.128.115', // 转发的目标url
-      changeOrigin: true // 支持跨域
+    '/api': { // Proxy forwarding only for requests whose request routes start with /api  
+      target: 'http://182.92.128.115', // the target of repost：url
+      changeOrigin: true // support cross-domain   
     }
   }
 },
@@ -157,23 +157,23 @@ devServer: {
 The situation of data interaction is quite complicated based on the project size. Thus, we choose vuex module to manage data.  
 Vuex features:state、actions、mutations、getters、modules
 
-## Mock/模拟数据接口
+## Mock/ Analog data interface  
 
-Mockjs: 用来拦截ajax请求, 生成随机数据返回
+Mockjs: Intercept ajax requests and generate random data to return
 
 mock/mockServer.js
 
 ```js
-// 先引入mockjs模块
+// import mock module
 
 import Mock from 'mockjs'
-//把JSON数据格式引入进来[JSON数据格式根本没有对外暴露，但是可以引入]
-//webpack默认对外暴露的：图片、JSoN数据格式
+//import Jason data  
+//webpack exposes images and JSoN data formats by default  
 import banner from './banner.json'
 import floor from './floor.json'
-//mock数据：第一个参数请求地址第二个参数：请求数据
-Mock.mock("/mock/banner", { code: 200, data: banner }) //模拟首页大的轮播图的数据
-Mock.mock("/mock/floor", { code: 200, data: floor })
+//mock data：the first parameter is the request address， the second one is the request data
+Mock.mock("/mock/banner", { code: 200, data: banner }) // Simulate data of the carousel from homepage
+Mock.mock("/mock/floor", { code: 200, data: floor }
 ```
 
 api/ajaxMock.js
