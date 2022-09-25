@@ -86,7 +86,7 @@ VueRouter.prototype.replace = function (location, onComplete, onAbort) {
 
 ### Subcomponent   
 
-![image-20220608153006927](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116061.png)
+![image-20220608153006927](https://raw.githubusercontent.com/ShiyuFang1/Shangpinhui-eCommerce-Platform/main/public/images/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220925123950.png)
 
 ## Encapsulate the ajax request module
 
