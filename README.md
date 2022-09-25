@@ -82,7 +82,7 @@ VueRouter.prototype.replace = function (location, onComplete, onAbort) {
 
 ## Home Component
 
-![image-20220608152939577](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116060.png)
+![image-20220608152939577](https://raw.githubusercontent.com/ShiyuFang1/Shangpinhui-eCommerce-Platform/main/public/images/homepage.jpg)
 
 ### Subcomponent   
 
@@ -222,9 +222,7 @@ export const reqFloors = ()=> mockAjax.get('/floors')
 * Sort Search  
 * Custom paging components  
 
-![image-20220608155022983](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116062.png)
-
-![image-20220608155044667](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116063.png)
+![image-20220608155022983](https://raw.githubusercontent.com/ShiyuFang1/Shangpinhui-eCommerce-Platform/main/public/images/product%20list.jpg)
 
 ## Detail Route
 
