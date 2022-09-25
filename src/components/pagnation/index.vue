@@ -32,7 +32,7 @@
       {{ totalPage }}
     </button>
     <button @click="$emit('getPageNo', pageNo + 1)">下一页</button>
-    <h1>{{ startNumAndEndNumber }}--{{ pageNo }}--{{ totalPage }}</h1>
+     <!-- <h1>{{ startNumAndEndNumber }}--{{ pageNo }}--{{ totalPage }}</h1> -->
 
     <button style="margin-left: 30px">共 {{ total }} 条</button>
   </div>
