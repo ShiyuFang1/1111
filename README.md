@@ -17,21 +17,19 @@
 
 ![image-20220608150232527](https://raw.githubusercontent.com/ShiyuFang1/Shangpinhui-shopping-website/main/src/components/images/%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_20220920114306.png)
 
-## Menu Introduction
 
-![image-20220608150502494](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116057.png)
 
 ## Header Component
 
 ![image-20220608151719241](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116058.png)
 
-Using Declarative Route Navigation vs Programmatic Route Navigation  
+* Using Declarative Route Navigation vs Programmatic Route Navigation  
 
-Fix a bug in programmatic route navigation  
+* Fix a bug in programmatic route navigation  
 
-The programmatic route jumps to the current route (parameters remain unchanged), and a warning error of Navigation Duplicated will be thrown. How to solve it?  
+* The programmatic route jumps to the current route (parameters remain unchanged), and a warning error of Navigation Duplicated will be thrown. How to solve it?  
 
-Fix the push and replace methods on the Vue prototype  
+* Fix the push and replace methods on the Vue prototype  
 
 ```js
 // Cache the push function on the prototype  
@@ -86,7 +84,7 @@ VueRouter.prototype.replace = function (location, onComplete, onAbort) {
 
 ![image-20220608152939577](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116060.png)
 
-Subcomponent   
+### Subcomponent   
 
 ![image-20220608153006927](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116061.png)
 
@@ -95,10 +93,10 @@ Subcomponent
 ```js
 /* 
 Secondary packaging of axios
-1. Configure a common base path and timeout  
-2. Display the request progress bar  
-3. The data which returned successfully isthe response body data（response.data）   
-4. Unified dispose all request errors, for the specific requests  which can also be processed or not processed  
+* Configure a common base path and timeout  
+* Display the request progress bar  
+* The data which returned successfully isthe response body data（response.data）   
+* Unified dispose all request errors, for the specific requests  which can also be processed or not processed  
 */
 import axios from 'axios'
 import NProgress from 'nprogress'
@@ -154,8 +152,8 @@ devServer: {
 
 ## Vuex
 
-The situation of data interaction is quite complicated based on the project size. Thus, we choose vuex module to manage data.  
-Vuex features:state、actions、mutations、getters、modules
+* The situation of data interaction is quite complicated based on the project size. Thus, we choose vuex module to manage data.  
+* Vuex features:state、actions、mutations、getters、modules
 
 ## Mock/ Analog data interface  
 
@@ -216,13 +214,13 @@ export const reqFloors = ()=> mockAjax.get('/floors')
 
 ## Search Route
 
-1. Prepare search and query condition parameters  
-2. Display dynamic data of component  
-3. Search by category and keyword  
-4. Search by brands  
-5. Search by attributes  
-6. Sort Search  
-7. Custom paging components  
+* Prepare search and query condition parameters  
+* Display dynamic data of component  
+* Search by category and keyword  
+* Search by brands  
+* Search by attributes  
+* Sort Search  
+* Custom paging components  
 
 ![image-20220608155022983](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116062.png)
 
@@ -230,8 +228,8 @@ export const reqFloors = ()=> mockAjax.get('/floors')
 
 ## Detail Route
 
-1)Partially enlarging picture  
-2)Carousel figure  
+* Partially enlarging picture  
+* Carousel figure  
 
 ![image-20220608155212247](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116064.png)
 
@@ -243,16 +241,16 @@ Distinguish sessionStorage from localStorage
 
 ## ShopCart Route
 
-1) Processing of user temporary ID
-2) Management of shopping cart data
-3) Monitor user input without using v-model
-4)Application of async / await / Promise.all() 
+* Processing of user temporary ID
+* Management of shopping cart data
+* Monitor user input without using v-model
+* Application of async / await / Promise.all() 
 
 ![image-20220608155635581](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116066.png)
 
 ## Registration and login router
-1) Response processing of components after registration/login request.   
-2) Automatically carry token data after logging in.  
+* Response processing of components after registration/login request.     
+* Automatically carry token data after logging in.  
 
 ![image-20220608155847993](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116067.png)
 
@@ -260,23 +258,23 @@ Distinguish sessionStorage from localStorage
 
 Test account and password:
 
-Account: 13700000000  
-Password: 111111  
+* Account: 13700000000  
+* Password: 111111  
 
 ## Navigation and Route Guards
 
-a. Only after logging in, you can view the transaction/payment/personal center page.  
-b. You can view the login page only if you are not logged in.  
-c. Only when there is skuInfo data in the carried skuNum and sessionStorage,  you can view the page of adding to the shopping cart successfully.  
-d. You can only jump to the transaction page from the shopping cart page.  
-e.You can only jump to the payment page from the transaction  page.  
-f. Only from the payment page,  you can jumps to the successful payment page.  
+* Only after logging in, you can view the transaction/payment/personal center page.  
+* You can view the login page only if you are not logged in.  
+* Only when there is skuInfo data in the carried skuNum and sessionStorage,  you can view the page of adding to the shopping cart successfully.  
+* You can only jump to the transaction page from the shopping cart page.  
+* You can only jump to the payment page from the transaction  page.  
+* Only from the payment page,  you can jumps to the successful payment page.  
 
 ## Order and Payment
 
-1) Submit the order  
-2) Pay with QR code  
-3) Get order status  
+* Submit the order  
+* Pay with QR code  
+* Get order status  
 
 ![image-20220609105837105](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116069.png)
 
@@ -300,19 +298,19 @@ f. Only from the payment page,  you can jumps to the successful payment page.
 
 ## Image Lazy Loading
 
-When the target image didn't finish loading, the page will display the loading image during the process.
-Moreover, the requested target image will only be loaded  when the <img> enters the visible range.
+* When the target image didn't finish loading, the page will display the loading image during the process.
+* The requested target image will only be loaded  when the <img> enters the visible range.
 
 ## Router Lazy Loading
 
-(1) When packaging and building applications, the JS package could become very large, which will affect page loading. If we can split the components corresponding to different routers into different code blocks, and then load the corresponding components when the routers are accessed, it will be more efficient.  
-(2) Essentially, Vue's asynchronous components are applied to routing components. which need to use the dynamic import syntax.
+* When packaging and building applications, the JS package could become very large, which will affect page loading. If we can split the components corresponding to different routers into different code blocks, and then load the corresponding components when the routers are accessed, it will be more efficient.  
+* Essentially, Vue's asynchronous components are applied to routing components. which need to use the dynamic import syntax.
 
 ## Form Data Validation
 
-(1) There are some register/login forms in the project, which need to be validated before submitting the request.  
-(2) The request will be sent only after the forestage form is verified successfully.  
-(3) If the validation fails, it will be prompted in the form of red text on the interface instead of alert.  
-(4) The timing of validation is not only when clicking Submit, but also during the input process.  
+* There are some register/login forms in the project, which need to be validated before submitting the request.  
+* The request will be sent only after the forestage form is verified successfully.  
+* If the validation fails, it will be prompted in the form of red text on the interface instead of alert.  
+* The timing of validation is not only when clicking Submit, but also during the input process.  
 
 ![image-20220609110707175](https://150-9155-1312350958.cos.ap-chengdu.myqcloud.com/img202206091116077.png)
